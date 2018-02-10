@@ -5,7 +5,7 @@
         :class="inputClass"
         type="text"
         autocomplete="off"
-        :v-model="selection"
+        v-model="selection"
         :placeholder="placeholder"
         :maxlength="maxlength"
         @input="change"
@@ -63,7 +63,7 @@
       return {
         open: false,
         current: 0,
-        selection: this.value[this.suggestionAttribute]
+        selection: this.value[this.suggestionAttribute] || ''
       }
     },
     computed: {
@@ -79,9 +79,13 @@
           this.open === true
       }
     },
+    watch: {
+      value (val) {
+        this.selection = val[this.suggestionAttribute]
+      }
+    },
     methods: {
       enter () {
-        console.log('CHANGE EVENT')
         let matches = this.matches[this.current]
         if (this.matches.length) {
           this.selection = matches[this.suggestionAttribute]
@@ -113,10 +117,11 @@
         }
       },
       focus () {
+        this.open = true
         this.$emit('focus')
       },
       blur () {
-        // this.open = false
+        setTimeout(() => { this.open = false }, 300)
         this.$emit('blur')
       },
       isActive (index) {

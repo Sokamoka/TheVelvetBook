@@ -156,6 +156,14 @@
   .limit-indicator {
     margin-top: -15px;
   }
+
+  .dropdown-menu {
+    .dropdown-content {
+      .dropdown-item {
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 </style>
