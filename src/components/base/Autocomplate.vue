@@ -5,16 +5,15 @@
         :class="inputClass"
         type="text"
         autocomplete="off"
-        v-model.lazy="selection"
+        :value="selection"
         :placeholder="placeholder"
         :maxlength="maxlength"
-        @input="change"
+        @input="input"
         @keydown.down="down"
         @keydown.up="up"
         @blur="blur"
         @focus="focus"
         @keydown.enter="enter"
-        v-debounce="500"
       />
     </div>
     <div class="dropdown-menu">
@@ -33,7 +32,7 @@
   </div>
 </template>
 <script>
-  import debounce from '../../directives/debounce'
+  import { DEBOUNCE_TIME } from '../../constans'
   export default {
     props: {
       value: {
@@ -65,21 +64,21 @@
       return {
         open: false,
         current: 0,
-        selection: this.value[this.suggestionAttribute] || ''
+        selection: this.value[this.suggestionAttribute] || '',
+        bounceId: null
       }
-    },
-    directives: {
-      debounce
     },
     computed: {
       matches () {
-        return this.suggestions.filter(str => {
-          let selection = this.selection ? this.selection.toLowerCase() : this.selection
-          return str[this.suggestionAttribute].toLowerCase().includes(selection)
+        if (!this.selection) return false
+        let matches = this.suggestions.filter(str => {
+          return str[this.suggestionAttribute].toLowerCase().includes(this.selection.toLowerCase())
         })
+        this.current = 0
+        return matches.slice(0, 5)
       },
       openSuggestion () {
-        return this.selection !== '' &&
+        return this.selection &&
           this.matches.length !== 0 &&
           this.open === true
       }
@@ -90,13 +89,13 @@
       }
     },
     methods: {
-      enter () {
+      enter (e) {
         let matches = this.matches[this.current]
         if (this.matches.length) {
           this.selection = matches[this.suggestionAttribute]
         } else {
           let matchObj = Object.keys(this.suggestions[0]).reduce((o, key) => ({...o, [key]: null}), {})
-          matchObj[this.suggestionAttribute] = this.selection
+          matchObj[this.suggestionAttribute] = e.target.value
           matches = matchObj
         }
         this.open = false
@@ -104,8 +103,11 @@
         this.$emit('input', matches)
         this.$emit('change')
       },
-      change (e) {
-        console.log(e.target.value)
+      input (e) {
+        clearTimeout(this.debounceId)
+        this.debounceId = setTimeout(() => {
+          this.selection = e.target.value
+        }, DEBOUNCE_TIME)
         this.$emit('input-keydown', e.target.value)
         if (this.open === false) {
           this.open = true
