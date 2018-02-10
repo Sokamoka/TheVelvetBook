@@ -1,0 +1,52 @@
+{
+  "favorites": [
+    {
+      "id": 0,
+      "image": "https://unsplash.it/500?image=15",
+      "title": "Lorem ipsum dolor 1",
+      "author": "Az Én Tortám",
+      "category": "cakes",
+      "country": "hungary",
+      "date": "2018-01-20",
+      "username": "azentortam",
+      "active": false,
+      "favorite": 90
+    },
+    {
+      "id": 1,
+      "image": "https://unsplash.it/500?image=18",
+      "title": "Lorem ipsum 2",
+      "author": "Az Én Tortám",
+      "category": "photo",
+      "country": "hungary",
+      "date": "2017-12-12",
+      "username": "azentortam",
+      "active": true,
+      "favorite": 55
+    },
+    {
+      "id": 2,
+      "image": "https://unsplash.it/500?image=10",
+      "title": "Lorem ipsum dolor 3",
+      "author": "Az Én Tortám",
+      "category": "cakes",
+      "country": "hungary",
+      "date": "2017-11-05",
+      "username": "azentortam",
+      "active": true,
+      "favorite": 120
+    },
+    {
+      "id": 3,
+      "image": "https://unsplash.it/500?image=11",
+      "title": "Lorem ipsum 4",
+      "author": "Az Én Tortám",
+      "category": "photo",
+      "country": "hungary",
+      "date": "2017-10-14",
+      "username": "azentortam",
+      "active": true,
+      "favorite": 10
+    }
+  ]
+}

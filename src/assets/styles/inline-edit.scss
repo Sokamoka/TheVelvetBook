@@ -1,0 +1,170 @@
+.inline-edit {
+  position: relative;
+
+  &:hover:before {
+    content: '\f040';
+    position: absolute;
+    color: white;
+    background-color: $primary;
+    left: -16px;
+    top: -10px;
+    font-family: 'FontAwesome';
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 3px 7px;
+    border-radius: 12121212px;
+  }
+
+  &__input {
+    display: block;
+    line-height: 22px;
+    box-sizing: border-box;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    background-color: white;
+    border-color: transparent;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 15px;
+    overflow-y: hidden;
+    width: 100%;
+    padding: 4px;
+    resize: none;
+
+    &:focus {
+      border-color: $primary;
+      outline: none;
+    }
+    &.is-danger {
+      border-color: $red;
+    }
+  }
+  &__text {
+    display: block;
+    padding: 4px;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    line-height: 22px;
+    background: none;
+    background-color: transparent;
+    border-color: transparent;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 15px;
+    width: 100%;
+    padding: 4px;
+    min-height: 32px;
+    word-wrap: break-word;
+
+    &:hover {
+      border-color: $gray-300;
+    }
+    &.is-danger {
+      border-color: $red;
+    }
+  }
+  &__help {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    font-size: 10px;
+    background-color: white;
+    color: $primary;
+    border: 1px solid $primary;
+    padding: 2px 7px;
+    border-radius: 12121212px;
+  }
+  &__placeholder {
+    color: $gray-500;
+    &.is-danger {
+      color: $red;
+    }
+  }
+
+  &.title {
+    .inline-edit__input {
+      font-weight: 600;
+    }
+  }
+  &.subtitle {
+    .inline-edit__input, .inline-edit__text {
+      font-size: $size-5;
+      line-height: 1.125;
+    }
+  }
+
+  &.has-text-centered {
+    .inline-edit__input {
+      text-align: center;
+    }
+  }
+  &.is-1 {
+    .inline-edit__input {
+      font-size: $size-1;
+      line-height: 1.125;
+    }
+    .inline-edit__text {
+      font-size: $size-1;
+      line-height: 1.125;
+    }
+  }
+  &.is-2 {
+    .inline-edit__input {
+      font-size: $size-2;
+      line-height: 1.125;
+    }
+    .inline-edit__text {
+      font-size: $size-2;
+      line-height: 1.125;
+    }
+  }
+  &.is-3 {
+    .inline-edit__input {
+      font-size: $size-3;
+      line-height: 1.125;
+    }
+    .inline-edit__text {
+      font-size: $size-3;
+      line-height: 1.125;
+    }
+  }
+  &.is-4 {
+    .inline-edit__input {
+      font-size: $size-4;
+      line-height: 1.125;
+    }
+    .inline-edit__text {
+      font-size: $size-4;
+      line-height: 1.125;
+    }
+  }
+  &.is-5 {
+    .inline-edit__input {
+      font-size: $size-5;
+      line-height: 1.125;
+    }
+    .inline-edit__text {
+      font-size: $size-5;
+      line-height: 1.125;
+    }
+  }
+  &.is-6 {
+    .inline-edit__input {
+      font-size: $size-6;
+      line-height: 1.125;
+    }
+    .inline-edit__text {
+      font-size: $size-6;
+      line-height: 1.125;
+    }
+  }
+  &.is-7 {
+    .inline-edit__input {
+      font-size: $size-7;
+      line-height: 1.125;
+    }
+    .inline-edit__text {
+      font-size: $size-7;
+      line-height: 1.125;
+    }
+  }
+}

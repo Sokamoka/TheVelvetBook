@@ -1,0 +1,137 @@
+{
+  "project": {
+    "id": 0,
+    "title": "Lorem ipsum dolor sit amet",
+    "author": "Az Én Tortám",
+    "category": "cake",
+    "country": "hungary",
+    "username": "azentortam",
+    "date": "2018-01-12",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus dia",
+    "tags": [
+      {
+        "id": 0,
+        "name": "Weddingcake",
+        "normalize": "weddingcake"
+      },
+      {
+        "id": 1,
+        "name": "Geodecake",
+        "normalize": "geodecake"
+      }
+    ]
+  },
+  "images": [
+    {
+      "id": 100,
+      "active": true,
+      "title": "Lorem ipsum dolor et ipsum Dolor et ipsum",
+      "src": "https://unsplash.it/1500?image=10",
+      "thumb": "https://unsplash.it/500?image=10",
+      "created": "2018-01-11"
+    },
+    {
+      "id": 101,
+      "active": false,
+      "title": "Dolor et ipsum",
+      "src": "https://unsplash.it/1500?image=11",
+      "thumb": "https://unsplash.it/500?image=11",
+      "created": "2018-01-09"
+    },
+    {
+      "id": 102,
+      "active": true,
+      "title": "Dolor et ipsum",
+      "src": "https://unsplash.it/1500?image=12",
+      "thumb": "https://unsplash.it/500?image=12",
+      "created": "2018-01-01"
+    },
+    {
+      "id": 103,
+      "active": true,
+      "title": "Dolor et ipsum",
+      "src": "https://unsplash.it/1500?image=13",
+      "thumb": "https://unsplash.it/500?image=13",
+      "created": "2018-01-01"
+    },
+    {
+      "id": 104,
+      "active": true,
+      "title": "Dolor et ipsum",
+      "src": "https://unsplash.it/1500?image=14",
+      "thumb": "https://unsplash.it/500?image=14",
+      "created": "2018-01-01"
+    },
+    {
+      "id": 105,
+      "active": true,
+      "title": "Dolor et ipsum",
+      "src": "https://unsplash.it/1500?image=15",
+      "thumb": "https://unsplash.it/500?image=15",
+      "created": "2018-01-01"
+    },
+    {
+      "id": 106,
+      "active": true,
+      "title": "Lorem ipsum dolor et ipsum Dolor et ipsum",
+      "src": "https://unsplash.it/1500?image=16",
+      "thumb": "https://unsplash.it/500?image=16",
+      "created": "2018-01-01"
+    },
+    {
+      "id": 107,
+      "active": false,
+      "title": "Dolor et ipsum",
+      "src": "https://unsplash.it/1500?image=17",
+      "thumb": "https://unsplash.it/500?image=17",
+      "created": "2018-01-01"
+    },
+    {
+      "id": 108,
+      "active": true,
+      "title": "Dolor et ipsum",
+      "src": "https://unsplash.it/1500?image=18",
+      "thumb": "https://unsplash.it/500?image=18",
+      "created": "2018-01-01"
+    },
+    {
+      "id": 109,
+      "active": true,
+      "title": "Dolor et ipsum",
+      "src": "https://unsplash.it/1500?image=19",
+      "thumb": "https://unsplash.it/500?image=19",
+      "created": "2017-12-31"
+    },
+    {
+      "id": 110,
+      "active": true,
+      "title": "Dolor et ipsum",
+      "src": "https://unsplash.it/1500?image=20",
+      "thumb": "https://unsplash.it/500?image=20",
+      "created": "2017-12-30"
+    }
+  ],
+  "credits": [
+    {
+      "staffId": 110,
+      "staffName": "azentortam",
+      "category": "photo",
+      "creditable": "Az Én Tortám",
+      "outer-link": "sdfsdf"
+    },
+    {
+      "staffId": 112,
+      "staffName": "author-x",
+      "category": "photo",
+      "creditable": "Az Én Tortám2",
+      "outer-link": "sdfsdf"
+    },
+    {
+      "staffId": null,
+      "staffName": null,
+      "category": "photo",
+      "creditable": "Az Én Tortám2",
+      "outer-link": "sdfsdf"
+    }
+  ]
+}
