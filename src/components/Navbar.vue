@@ -5,14 +5,14 @@
         <a class="navbar-item" href="/">
           The Velvet Book
         </a>
-        <div class="navbar-burger burger" data-target="navbarTop">
+        <div :class="{ 'navbar-burger burger': true, 'is-active': isMenuVisible }" data-target="navbarTop" @click="menuToggle">
           <span></span>
           <span></span>
           <span></span>
         </div>
       </div>
 
-      <div id="navbarTop" class="navbar-menu">
+      <div id="navbarTop" :class="{ 'navbar-menu': true, 'is-active': isMenuVisible }">
         <div class="navbar-start">
           <a class="navbar-item" href="/feed">
             Feed
@@ -74,6 +74,14 @@
   import Avatar from 'vue-avatar'
 
   export default {
+    components: {
+      Avatar
+    },
+    data () {
+      return {
+        isMenuVisible: false
+      }
+    },
     computed: {
       isLoggedIn () {
         return this.$store.getters.isLoggedIn
@@ -93,29 +101,37 @@
       setLocale (locale) {
         // Vue.i18n.set(locale)
         this.$store.dispatch('changeLocale', locale)
+      },
+      menuToggle () {
+        this.isMenuVisible = !this.isMenuVisible
       }
-    },
-    components: {
-      Avatar
     }
   }
 </script>
-<style scoped>
-  .navigation {
-    position: fixed;
-    top: 0;
-    min-width: 100%;
-    z-index: 1024;
-    box-shadow: 0 2px 3px hsla(0,0%,7%,.1), 0 0 0 1px hsla(0,0%,7%,.1);
-    background-color: #FFFFFF;
+<style scoped lang="scss">
+.navigation {
+  background-color: #fff;
+  box-shadow: 0 2px 3px hsla(0, 0%, 7%, .1), 0 0 0 1px hsla(0, 0%, 7%, .1);
+  min-width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1024;
+}
+
+.navbar-brand {
+  font-family: 'Abel', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  .navbar-item {
+    padding-bottom: 5px;
+    padding-top: 5px;
   }
-  .navbar-brand {
-    font-family: 'Abel', sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    text-transform: uppercase;
-  }
-  .vue-avatar--wrapper {
-    margin-right: 5px;
-  }
+}
+
+.vue-avatar--wrapper {
+  display: inline-block;
+  margin-right: 5px;
+}
 </style>
