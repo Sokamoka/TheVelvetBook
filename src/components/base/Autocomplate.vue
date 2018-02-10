@@ -5,7 +5,7 @@
         :class="inputClass"
         type="text"
         autocomplete="off"
-        v-model="selection"
+        v-model.lazy="selection"
         :placeholder="placeholder"
         :maxlength="maxlength"
         @input="change"
@@ -14,6 +14,7 @@
         @blur="blur"
         @focus="focus"
         @keydown.enter="enter"
+        v-debounce="500"
       />
     </div>
     <div class="dropdown-menu">
@@ -32,6 +33,7 @@
   </div>
 </template>
 <script>
+  import debounce from '../../directives/debounce'
   export default {
     props: {
       value: {
@@ -66,6 +68,9 @@
         selection: this.value[this.suggestionAttribute] || ''
       }
     },
+    directives: {
+      debounce
+    },
     computed: {
       matches () {
         return this.suggestions.filter(str => {
@@ -99,8 +104,9 @@
         this.$emit('input', matches)
         this.$emit('change')
       },
-      change () {
-        this.$emit('input-keydown', this.selection)
+      change (e) {
+        console.log(e.target.value)
+        this.$emit('input-keydown', e.target.value)
         if (this.open === false) {
           this.open = true
           this.current = 0
